@@ -1,4 +1,4 @@
-# Movies Catalog - адаптивный каталог фильмов на React
+# Movies Catalog - каталог фильмов на React
 
 При создании проекта использованы технологии:
 <li>React (hooks, router)</li>
