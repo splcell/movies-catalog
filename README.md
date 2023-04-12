@@ -6,7 +6,7 @@
 <li>React-Bootstrap</li>
 <li>CSS</li>
 <br>
-Библиотеки:
+API:
 <li>OMDB</li>
 <hr>
 <h3 align=center>О проекте:</h3>
