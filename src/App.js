@@ -37,7 +37,7 @@ function searchMovie() {
 };
 
 //создание динамического адреса в адресной строке
-useEffect(() => {
+useMemo(() => {
   if(searchValue.trim() !== ''){
     navigate({
       pathname,

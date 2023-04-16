@@ -5,8 +5,6 @@ import Form from 'react-bootstrap/Form';
 
 const SearchSort = ({search, setSearch, searchMovie, filter, setFilter}) => {
 
-    // const navigate = useNavigate()
-
 // функция валидации, позволяющая вводить в поиск только маленькие и большие английские буквы и пробелы. Если валидация пройдена - инпут становится упарвляемым
     const handleSearchInputChange = (e) => {
         let validation = /^[a-zA-Z\s\-]+$/;
@@ -25,10 +23,6 @@ const SearchSort = ({search, setSearch, searchMovie, filter, setFilter}) => {
             searchMovie(search);
         }
     };
-
-    // useEffect(() => {
-    //     navigate(`?title=${search}`)
-    // }, [search])
 
     return (
         /* возращает управляемые поисковую строку и селект, а также кнопку для запуска поиска */

@@ -29,7 +29,7 @@ const MoviePage = () => {
     return (
         <div className='page__content' style={{ height: 'calc(130vh - 53px - 86px)'}}>
             <Container>
-                <Button variant='dark' className='page__btn-back' onClick={() => navigate(-1)}>Go Back</Button>
+                <Button variant='dark' className='page__btn-back' onClick={() => navigate(-2)}>Go Back</Button>
                 <div className='page__inner'>
                     {fullMovieInfo.Poster === 'N/A' ? <img src={`https://via.placeholder.com/350x450?text=${fullMovieInfo.Title}`} style={{ margin: '3rem 0', height: '480px', marginTop: '6rem' }} alt={fullMovieInfo.Title} className='page__info-img' /> : <img src={fullMovieInfo.Poster} style={{ margin: '3rem 0', height: '480px', marginTop: '6rem' }} alt={fullMovieInfo.Title} className='page__info-img' />}
                     <div className='page__info'>
