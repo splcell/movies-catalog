@@ -29,4 +29,3 @@ API:
 <li>Адаптация под разные типы устройств</li>
 <br><br>
 
-<b>Ознакомиться с проектом можно по ссылке: <a href='splcell.github.io/movies-catalog/'>splcell.github.io/movies-catalog/</a></b>
