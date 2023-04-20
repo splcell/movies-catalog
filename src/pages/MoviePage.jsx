@@ -1,25 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
-import { useNavigate, useParams } from 'react-router-dom';
+import {useParams } from 'react-router-dom';
 import Table from 'react-bootstrap/Table';
 import {getFullMovieData } from '../api';
 
 const MoviePage = () => {
-    //извлекаем название фильма из поисковой строки с помощью хука useParams
     const {title} = useParams()
     const [fullMovieInfo, setFullMovieInfo] = useState({});
-    const navigate = useNavigate()
-    let currentUrl
-
-    try {
-        currentUrl = window.location.href;
-    } catch (error) {
-        console.error("Ошибка при получении URL: " + error.message);
-    }
-
-    console.log(currentUrl)
     
-    //получем информацию о фильме с помощью названия фильма, ранее извлеченного с помощью useParams. Делаем перерендер каждый раз после изменения названия
+
     useEffect(() =>{
         getFullMovieData(title).then(data => {
             setFullMovieInfo(data);
@@ -37,7 +26,6 @@ const MoviePage = () => {
                         <Table striped>
                             <thead></thead>
                             <tbody>
-                                {/* Заполняем данными таблицу с информацией о фильме */}
                                 {[
                                     'Actors',
                                     'Awards',
@@ -63,7 +51,6 @@ const MoviePage = () => {
                     </div>
                 </div>
                         <p className='page__info-text'>{fullMovieInfo.Plot}</p>
-                        {/* Блок ссылок для social sharing */}
                         <div className='page__shares-block'>
                             <a href={`https://www.shareaholic.com/api/share/?v=1&apitype=1&apikey=368b0219904c5e57b9417ba5a135ebad&service=facebook&title=${title}&link=${currentUrl}/&source=Movies_Catalog`} target="_blank" className='page__share-link'>Post to Facebook</a>
                             <a href={`https://www.shareaholic.com/api/share/?v=1&apitype=1&apikey=368b0219904c5e57b9417ba5a135ebad&service=vk&title=${title}&link=${currentUrl}/&source=Movies_Catalog`} target="_blank" className='page__share-link'>Post to VK</a>
