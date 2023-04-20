@@ -22,7 +22,7 @@ const filteredMovies = useSelectedMovies(movies, filter);
 
 
 
-//функция searchMovie отвечает за поиск фильма на основе запроса, введенного в поисковую строку
+
 function searchMovie() {
   getSearchedMovies(searchValue, 'all', page).then(data => {
     if (typeof data === 'undefined') {
@@ -51,13 +51,6 @@ useMemo(() => {
   }
 }, [filteredMovies, page, filter]);
 
-// console.log(search.split('&')[1].split('=')[1])
-
-
-
-/* хук useEffect отвечающий за первоначальную загрузку данных, отслеживающий номер страницы для обновления контента и количество страниц из API для создания динамической пагинации.
-Если функция searchMovie запущена, useEffect отображает данные по нужному фильму, если нет - то выводит данные по Матрице
-*/
 
 useEffect(() => {
   
@@ -77,11 +70,6 @@ useEffect(() => {
 
   
 }, [search, pageLoad, page]);
-
-
-
-
-
 
 
 
